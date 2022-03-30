@@ -3,15 +3,6 @@
 	font-family: 'Barlow Regular';
 	src: url('./fonts/Barlow-Regular.otf');
 }
-/* @font-face {
-	font-family: 'Barlow SemiBold';
-	src: url('./fonts/Barlow-SemiBold.otf');
-}
-@font-face {
-	font-family: 'Barlow SemiCondensed';
-	src: url('./fonts/BarlowSemiCondensed-Regular.otf');
-} */
-
 
 :root {
 	--page-background: #EFF6FF;
@@ -43,6 +34,8 @@ a:visited {
 }
 
 button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	border: none;
 	background: none;
@@ -63,6 +56,8 @@ button:not(class) {
 
 input[type="email"],
 input[type="tel"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	appearance: none;
 	outline: none;
 	background: none;
@@ -92,13 +87,46 @@ input[type="radio"]:hover,
 label:hover {
 	cursor: pointer;
 }
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: absolute;
+}
+input[type="checkbox"] + span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	margin-top: 0.3em;
+	width: 0.7em;
+	height: 0.7em;
+	border: 1px solid var(--text-faded-color);
+	border-radius: 1px;
+	fill: none;
+	/* stroke: none;
+	stroke-width: 2; */
+}
+input[type="checkbox"]:checked + span {
+	background-color: var(--btn-background);
+	color: var(--wnd-background);
+	/* stroke: currentColor; */
+	fill: currentColor;
+}
+input[type="checkbox"]:disabled + span {
+	background-color: var(--text-faded-color);
+}
+input[type="checkbox"]:checked:disabled + span {
+	fill: var(--text-caption-color);
+}
+
 label {
 	padding-left: 7px;
 	/* font-size: 12pt; */
 	font-size: 15px;
 }
-input[type="checkbox"] + label {
-	/* font-size: 10pt; */
+input[type="checkbox"] + span + label {
+	margin-left: 1.2em;
 	font-size: 13px;
 	color: var(--text-faded-color);
 }
